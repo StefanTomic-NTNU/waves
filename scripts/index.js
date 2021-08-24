@@ -1,14 +1,15 @@
 let x_offset = 0;
 let canvas;
 let ctx;
-const scale = 10;
+const scale = 1.8;
+const animationSpeed = 35;
 
 $(document).ready(function () {
 
     canvas = $("#canvas1")[0];
     ctx = canvas.getContext("2d");
 
-    runAnimation(50);
+    runAnimation(animationSpeed);
 
     $("#gallery_title").hover(function () {
             $(this).css("color", "red");
@@ -29,8 +30,8 @@ function drawCanvas() {
     ctx.save();
 
     $('#canvas1').css('background-color', 'azure');
-    drawWaves();
     drawBoat();
+    drawWaves();
 
 
     ctx.restore();
@@ -39,7 +40,7 @@ function drawCanvas() {
 
 
 function drawWaves() {
-    const l = 80; // wavelength
+    const l = 150; // wavelength
     const heightRatio = 0.55;
     const tf = l * 3 / 10; // two fifths of length for sine
 
@@ -50,7 +51,7 @@ function drawWaves() {
     }
     ctx.translate(-x_offset, 0);
 
-    ctx.strokeStyle = "darkblue";
+    ctx.strokeStyle = "rgba(40, 135, 212, 0.7)";
     ctx.beginPath();
 
     ctx.moveTo(0,0);
@@ -62,27 +63,27 @@ function drawWaves() {
     ctx.lineTo(canvas.width, canvas.height);
     ctx.lineTo(-3*canvas.width, canvas.height);
     ctx.closePath();
-    ctx.fillStyle = "darkblue";
+    ctx.fillStyle = "rgba(40, 135, 212, 0.7)";;
     ctx.fill();
     ctx.stroke();
 }
 
 
 function drawBoat() {
-    ctx.restore();
+    // ctx.restore();
     ctx.translate(canvas.width/2, 0);
     ctx.beginPath();
-    ctx.moveTo(-50,10)
+    ctx.moveTo(-50*scale,10*scale)
     ctx.strokeStyle = "lightgrey";
-    ctx.lineTo(50, 10);
-    ctx.lineTo(70, -10);
-    ctx.lineTo(-50, -10);
+    ctx.lineTo(50*scale, 10*scale);
+    ctx.lineTo(70*scale, -10*scale);
+    ctx.lineTo(-50*scale, -10*scale);
     ctx.closePath();
     ctx.fillStyle = "white";
     ctx.fill();
     ctx.stroke();
     ctx.translate(-canvas.width/2, 0);
-    ctx.strokeStyle = "darkblue";
+    // ctx.strokeStyle = "darkblue";
 }
 
 
