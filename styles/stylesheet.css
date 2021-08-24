@@ -2,12 +2,33 @@ p {
     color: blue;
 }
 
-.page {
+.main {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 100%;
 }
 
-.page div {
+.container {
+    display: flex;
+    justify-content: center;
+}
 
+.page {
+    background-color: white;
+    width: 80%;
+    padding-bottom: 100%;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px;
+}
+
+
+body {
+    background-color: #213564; /* stjålet fra https://kystmuseet.no/ */
+}
+
+#canvas1 {
+    border: 1px solid #213564;
+    width: 60%;
+    object-fit: contain;
 }
