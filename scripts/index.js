@@ -1,7 +1,7 @@
 const scale = 2;
 const animationSpeed = 40;
-const rotationMaximum = 15;
-const rotationSpeed = 0.2;
+const rotationMaximum = 10;
+const rotationSpeed = 0.3;
 let x_offset = 0;
 let rotation_offset = 0;
 let rotation_up = rotationSpeed;
@@ -84,20 +84,61 @@ function drawBoat() {
     } else {
         rotation_offset += rotation_up;
     }
-    ctx.translate(canvas.width/2, 0);
+    ctx.translate(canvas.width/2, -10);
     ctx.rotate(rotation_offset * Math.PI / 180);
+
+    // Drawing of hull above water
     ctx.beginPath();
-    ctx.moveTo(-50*scale,10*scale)
-    ctx.strokeStyle = "lightgrey";
-    ctx.lineTo(50*scale, 10*scale);
-    ctx.lineTo(70*scale, -10*scale);
-    ctx.lineTo(-50*scale, -10*scale);
+    ctx.moveTo(-50*scale,0);
+    ctx.lineTo(50*scale,0);
+    ctx.lineTo(65*scale, -10*scale);
+    ctx.lineTo(-53*scale, -10*scale);
     ctx.closePath();
+    ctx.strokeStyle = "lightgrey";
     ctx.fillStyle = "white";
+    ctx.stroke();
     ctx.fill();
+
+    // Drawing of hull underwater
+    ctx.beginPath();
+    ctx.moveTo(-50*scale,0);
+    ctx.lineTo(50*scale,0);
+    ctx.lineTo(35*scale, 10*scale);
+    ctx.lineTo(15*scale, 10*scale);
+    ctx.lineTo(10*scale, 20*scale);
+    ctx.lineTo(-5*scale, 20*scale);
+    ctx.lineTo(-5*scale, 10*scale);
+    ctx.lineTo(-30*scale, 8*scale);
+    ctx.lineTo(-30*scale, 25*scale);
+    ctx.lineTo(-38*scale, 25*scale);
+    ctx.lineTo(-38*scale, 5*scale);
+    ctx.lineTo(-50*scale, 0*scale);
+    ctx.closePath();
+    ctx.strokeStyle = "darkred";
+    ctx.fillStyle = "darkred";
+    ctx.stroke();
+    ctx.fill();
+
+    // Drawing of mast and boom
+    ctx.beginPath();
+    ctx.moveTo(10*scale, -10*scale);
+    ctx.lineTo(10*scale, -100*scale);
+    ctx.lineTo(7.5*scale, -100*scale);
+    ctx.lineTo(7.5*scale, -20*scale);
+    ctx.lineTo(-40*scale, -20*scale);
+    ctx.lineTo(-40*scale, -17.5*scale);
+    ctx.lineTo(7.5*scale, -17.5*scale);
+    ctx.lineTo(7.5*scale, -10*scale);
+    ctx.closePath();
+    ctx.strokeStyle = "lightgrey";
+    ctx.fillStyle = "lightgrey";
+    ctx.stroke();
+    ctx.fill();
+
+    ctx.closePath();
     ctx.stroke();
     ctx.rotate((360-rotation_offset) * Math.PI / 180);
-    ctx.translate(-canvas.width/2, 0);
+    ctx.translate(-canvas.width/2, 10);
     // ctx.strokeStyle = "darkblue";
 }
 
