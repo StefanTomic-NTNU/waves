@@ -1,8 +1,12 @@
+const scale = 2;
+const animationSpeed = 40;
+const rotationMaximum = 15;
+const rotationSpeed = 0.2;
 let x_offset = 0;
+let rotation_offset = 0;
+let rotation_up = rotationSpeed;
 let canvas;
 let ctx;
-const scale = 1.8;
-const animationSpeed = 35;
 
 $(document).ready(function () {
 
@@ -71,7 +75,17 @@ function drawWaves() {
 
 function drawBoat() {
     // ctx.restore();
+    if (rotation_offset >= rotationMaximum) {
+        rotation_up = -rotationSpeed;
+        rotation_offset += rotation_up;
+    } else if (rotation_offset <= -rotationMaximum) {
+        rotation_up = rotationSpeed;
+        rotation_offset += rotation_up;
+    } else {
+        rotation_offset += rotation_up;
+    }
     ctx.translate(canvas.width/2, 0);
+    ctx.rotate(rotation_offset * Math.PI / 180);
     ctx.beginPath();
     ctx.moveTo(-50*scale,10*scale)
     ctx.strokeStyle = "lightgrey";
@@ -82,6 +96,7 @@ function drawBoat() {
     ctx.fillStyle = "white";
     ctx.fill();
     ctx.stroke();
+    ctx.rotate((360-rotation_offset) * Math.PI / 180);
     ctx.translate(-canvas.width/2, 0);
     // ctx.strokeStyle = "darkblue";
 }
