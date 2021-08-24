@@ -31,39 +31,38 @@ function draw_waves() {
     // ctx.save();
 
     ctx.clearRect(-canvas.width, -canvas.height, 2*canvas.width, 2*canvas.height); // clear the canvas
-    ctx.translate(0, 100); // just for display
+     // just for display
     ctx.save();
+
     if (x_offset >= l) {
-        ctx.translate(l, 0);
-        x_offset -= l;
+        x_offset = 0
     } else {
-        ctx.translate(-1, 0);
         x_offset += 1;
     }
+    ctx.translate(-x_offset, 0);
 
     ctx.beginPath();
     ctx.strokeStyle ='darkblue';
 
     ctx.moveTo(0,0);
-    for(let i = 0; i < (canvas1.width) / l +3 ; i++) {
+    for(let i = 0; i <= 10 ; i++) {
         ctx.bezierCurveTo(tf,-(l*heightRatio-tf),l-tf,l*heightRatio-tf,l,0);
         ctx.translate(l, 0);
     }
 
-    ctx.translate(-((canvas1.width) / l + 3)*l, -100);
     //ctx.moveTo(canvas.width, 100);
     ctx.lineTo(canvas.width, canvas.height);
-    ctx.lineTo(-l, canvas.height);
+    ctx.lineTo(-3*canvas.width, canvas.height);
     ctx.closePath();
     ctx.fillStyle = "darkblue";
     ctx.fill();
     ctx.stroke();
 
-    ctx.save();
+    ctx.restore();
 
 }
 
 function loop_waves(speed) {
-
+    ctx.translate(0, 100);
     setInterval(draw_waves, speed);
 }
