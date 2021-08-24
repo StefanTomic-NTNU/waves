@@ -1,4 +1,4 @@
-const scale = 2;
+const scale = 5;
 const animationSpeed = 40;
 let rotationSpeed = 0.3;
 let rotationMaximum = 10;
@@ -11,10 +11,11 @@ let ctx;
 
 $(document).ready(function () {
 
-    canvas = $("#canvas1")[0];
+    let $canvasQuery = $("#canvas1");
+    canvas = $canvasQuery[0];
     ctx = canvas.getContext("2d");
 
-    $("#canvas1").click(function () {
+    $canvasQuery.click(function () {
         if (mainsailUp) {
             mainsailUp = false;
         } else if (!mainsailUp) {
@@ -79,7 +80,7 @@ function drawWaves() {
     ctx.lineTo(canvas.width, canvas.height);
     ctx.lineTo(-3*canvas.width, canvas.height);
     ctx.closePath();
-    ctx.fillStyle = "rgba(40, 135, 212, 0.7)";;
+    ctx.fillStyle = "rgba(40, 135, 212, 0.7)";
     ctx.fill();
     ctx.stroke();
 }
@@ -131,7 +132,7 @@ function drawBoat() {
     ctx.lineTo(-30*scale, 25*scale);
     ctx.lineTo(-38*scale, 25*scale);
     ctx.lineTo(-38*scale, 5*scale);
-    ctx.lineTo(-50*scale, 0*scale);
+    ctx.lineTo(-50*scale, 0);
     ctx.closePath();
     ctx.strokeStyle = "darkred";
     ctx.fillStyle = "darkred";
