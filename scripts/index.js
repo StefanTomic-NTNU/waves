@@ -1,10 +1,11 @@
 const scale = 2;
 const animationSpeed = 40;
-const rotationMaximum = 10;
-const rotationSpeed = 0.3;
+let rotationSpeed = 0.3;
+let rotationMaximum = 10;
 let x_offset = 0;
 let rotation_offset = 0;
 let rotation_up = rotationSpeed;
+let mainsailUp = false;
 let canvas;
 let ctx;
 
@@ -12,6 +13,14 @@ $(document).ready(function () {
 
     canvas = $("#canvas1")[0];
     ctx = canvas.getContext("2d");
+
+    $("#canvas1").click(function () {
+        if (mainsailUp) {
+            mainsailUp = false;
+        } else if (!mainsailUp) {
+            mainsailUp = true;
+        }
+    })
 
     runAnimation(animationSpeed);
 
@@ -21,8 +30,6 @@ $(document).ready(function () {
         function () {
             $(this).css("color", "blue");
         })
-
-
 
 })
 
@@ -51,7 +58,12 @@ function drawWaves() {
     if (x_offset >= l) {
         x_offset = 0
     } else {
-        x_offset += 1;
+        // Boat speed is greater when sail is up
+        if (mainsailUp) {
+            x_offset += 1.5;
+        } else {
+            x_offset += 1;
+        }
     }
     ctx.translate(-x_offset, 0);
 
@@ -75,6 +87,13 @@ function drawWaves() {
 
 function drawBoat() {
     // ctx.restore();
+    if(mainsailUp) {
+        rotationSpeed = 0.15;
+        rotationMaximum = 6;
+    } else {
+        rotationSpeed = 0.3;
+        rotationMaximum = 10;
+    }
     if (rotation_offset >= rotationMaximum) {
         rotation_up = -rotationSpeed;
         rotation_offset += rotation_up;
@@ -99,7 +118,7 @@ function drawBoat() {
     ctx.stroke();
     ctx.fill();
 
-    // Drawing of hull underwater
+    // Drawing of hull and keel underwater
     ctx.beginPath();
     ctx.moveTo(-50*scale,0);
     ctx.lineTo(50*scale,0);
@@ -122,8 +141,8 @@ function drawBoat() {
     // Drawing of mast and boom
     ctx.beginPath();
     ctx.moveTo(10*scale, -10*scale);
-    ctx.lineTo(10*scale, -100*scale);
-    ctx.lineTo(7.5*scale, -100*scale);
+    ctx.lineTo(10*scale, -125*scale);
+    ctx.lineTo(7.5*scale, -125*scale);
     ctx.lineTo(7.5*scale, -20*scale);
     ctx.lineTo(-40*scale, -20*scale);
     ctx.lineTo(-40*scale, -17.5*scale);
@@ -135,11 +154,25 @@ function drawBoat() {
     ctx.stroke();
     ctx.fill();
 
-    ctx.closePath();
-    ctx.stroke();
+    // Drawing of mainsail
+    if (mainsailUp) {
+        ctx.beginPath();
+        ctx.moveTo(7.5*scale, -20*scale);
+        ctx.lineTo(-40*scale, -20*scale);
+        ctx.lineTo(7.5*scale, -125*scale);
+        ctx.closePath();
+        ctx.strokeStyle = "lightgrey";
+        ctx.fillStyle = "white";
+        ctx.stroke();
+        ctx.fill();
+    }
+
+
+
     ctx.rotate((360-rotation_offset) * Math.PI / 180);
     ctx.translate(-canvas.width/2, 10);
-    // ctx.strokeStyle = "darkblue";
+
+
 }
 
 
