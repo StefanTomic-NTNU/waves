@@ -24,7 +24,9 @@ p {
     width: 100%;
     height: 100%;
     padding-bottom: 10%;
-    border-radius: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
 }
 
 .container {
@@ -75,4 +77,25 @@ body {
 #righthand_text {
     grid-column-start: 2;
     grid-column-end: 2;
+}
+
+.wave_container {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.wave {
+    width: 200%;
+    animation: wave linear 3s infinite;
+}
+
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-16%);
+    }
 }

@@ -175,7 +175,7 @@ function drawBoat() {
 
 
 }
-
+// https://www.youtube.com/watch?v=UTHgr6NLeEw
 
 function runAnimation(speed) {
     ctx.translate(0, canvas.height / 2);
