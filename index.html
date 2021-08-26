@@ -22,7 +22,7 @@
 
 <main>
     <div class="container">
-        <section class="page_description">
+        <section class="content text_grid">
             <p class = "lefthand_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Maecenas fermentum lectus quis enim maximus, nec sodales nibh dictum.
@@ -51,7 +51,7 @@
         </section>
 
     <div class="container">
-        <section class="page_description">
+        <section class="content text_grid">
             <p class = "lefthand_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Maecenas fermentum lectus quis enim maximus, nec sodales nibh dictum.
@@ -80,13 +80,9 @@
                         <path id="BottomWave" d="M-11 25.25C-10.2 23.5833 -8.86667 23.5833 -7 25.25C-5.13333 26.9167 -3.8 26.9167 -3 25.25C-2.2 23.5833 -0.866667 23.5833 1 25.25C2.86667 26.9167 4.2 26.9167 5 25.25C5.8 23.5833 7.13333 23.5833 9 25.25C10.8667 26.9167 12.2 26.9167 13 25.25C13.8 23.5833 15.1333 23.5833 17 25.25C18.8667 26.9167 20.2 26.9167 21 25.25C21.8 23.5833 23.1333 23.5833 25 25.25C26.8667 26.9167 28.2 26.9167 29 25.25C29.8 23.5833 31.1333 23.5833 33 25.25C34.8667 26.9167 36.2 26.9167 37 25.25C37.8 23.5833 39.1333 23.5833 41 25.25C42.8667 26.9167 44.2 26.9167 45 25.25C45.8 23.5833 47.1333 23.5833 49 25.25C50.8667 26.9167 52.2 26.9167 53 25.25C53.8 23.5833 55.1333 23.5833 57 25.25C58.8667 26.9167 60.2 26.9167 61 25.25C61.8 23.5833 63.1333 23.5833 65 25.25C66.8667 26.9167 68.2 26.9167 69 25.25C69.8 23.5833 71.1333 23.5833 73 25.25C74.8667 26.9167 76.2 26.9167 77 25.25C77.8 23.5833 79.1333 23.5833 81 25.25C82.8667 26.9167 84.2 26.9167 85 25.25C85.8 23.5833 87.1333 23.5833 89 25.25C90.8667 26.9167 92.2 26.9167 93 25.25C93.8 23.5833 95.1333 23.5833 97 25.25C98.8667 26.9167 100.2 26.9167 101 25.25C101.8 23.5833 103.133 23.5833 105 25.25C106.867 26.9167 108.2 26.9167 109 25.25" stroke="#4C75F2" stroke-width="2"/>
                         <rect id="Rectangle 1" x="-2" y="25" width="108" height="25" fill="#4C75F2"/>
                     </g>
-                    <g id="Fish2">
+                    <g id="Fish">
                         <ellipse id="Fishbody 2" cx="94.5" cy="33" rx="3.5" ry="1"/>
                         <path id="Fishtail 2" d="M97 33L99.25 31.2679L99.25 34.7321L97 33Z"/>
-                    </g>
-                    <g id="Fish1">
-                        <ellipse id="Fishbody 1" cx="12.5" cy="33" rx="3.5" ry="1" fill="#D8CEFF"/>
-                        <path id="Fishtail 1" d="M15 33L17.25 31.2679L17.25 34.7321L15 33Z" fill="#D8CEFF"/>
                     </g>
                     <g id="Blowfish">
                         <path id="Star 1" d="M37.4641 36.4641L38.8795 38.516L41.2683 39.228L39.7542 41.2082L39.8152 43.7002L37.4641 42.8721L35.113 43.7002L35.174 41.2082L33.6599 39.228L36.0487 38.516L37.4641 36.4641Z" fill="#E2F500"/>
@@ -108,18 +104,23 @@
     </section>
 
     <section class="doc_section">
-        <button id="toggleBtn" onclick="toggleDocs()">Documentation</button>
-        <div class="documentation" id = "docs">
-            <p class = "doc" id = "doc1">
-                Curabitur nec eros libero.
-                Donec at mauris gravida, gravida augue eu, placerat eros.
-                Donec blandit in nulla in pulvinar.
-                Curabitur pharetra ipsum magna, ac pretium augue sodales eget.
-                Donec dignissim cursus mollis. Curabitur et lorem hendrerit, ornare eros scelerisque, gravida nisl.
-                Curabitur elementum commodo placerat.
-            </p>
-        </div>
+        <div class="container" id = "btn-container">
 
+            <button id="toggleBtn" onclick="toggleDocs()">Documentation</button>
+
+        </div>
+        <div class="container">
+            <div class="content" id = "docs">
+                <p>
+                    Curabitur nec eros libero.
+                    Donec at mauris gravida, gravida augue eu, placerat eros.
+                    Donec blandit in nulla in pulvinar.
+                    Curabitur pharetra ipsum magna, ac pretium augue sodales eget.
+                    Donec dignissim cursus mollis. Curabitur et lorem hendrerit, ornare eros scelerisque, gravida nisl.
+                    Curabitur elementum commodo placerat.
+                </p>
+            </div>
+        </div>
     </section>
 
 </main>

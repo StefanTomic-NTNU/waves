@@ -35,6 +35,10 @@ p {
 
 }
 
+section {
+    padding: 22.5% 0 5% 0;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -63,16 +67,20 @@ body {
     font-size: 4rem;
 }
 
-.page_description {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 5%;
+.content {
+
     width: min(99%, 70.5rem);
     padding: 0 0 20% 0;
 }
 
-.page_description > p {
+.content > p {
     font-size: 1.5rem;
+}
+
+.text_grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5%;
 }
 
 #lefthand_text {
@@ -99,7 +107,7 @@ body {
     animation: wave linear 3s infinite;
 }
 
-#Fish2 {
+#Fish {
     fill: var(--fish-color-1);
     animation: swim linear 6s infinite;
 }
@@ -112,20 +120,24 @@ svg:hover #Blowfish {
     opacity: 0;
 }
 
-#Fish1 {
-    transform: translateX(-100%);
-}
-
 #doc_section {
-    display: flex;
-    justify-content: center;
-    padding: 10% 0 0 0;
+    padding: 20% 0 0 0;
 }
 
-/*
-#docs {
-    visibility: var(--docs-vis);
-}*/
+Button { /* https://www.w3schools.com/css/css3_buttons.asp */
+    background-color: aquamarine; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: #213564;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#btn-container {
+    padding-bottom: 5%;
+}
 
 @keyframes wave {
     0% {

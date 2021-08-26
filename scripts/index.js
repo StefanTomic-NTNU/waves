@@ -187,15 +187,9 @@ function runAnimation(speed) {
 // https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 function toggleDocs() {
     let docs = document.getElementById('docs');
-    // let doc_vis = document.documentElement.style.getPropertyValue('--doc-vis');
-    // console.log("Hæ" + docs.style.visibility.toString());
     if (docs.style.visibility === 'hidden') {
-        console.log("yes");
         docs.style.visibility = 'visible';
-       // document.documentElement.style.setProperty('--doc-vis', 'visible');
     } else {
-        console.log("no");
         docs.style.visibility = 'hidden';
-        // document.documentElement.style.setProperty('--doc-vis', 'hidden');
     }
 }
