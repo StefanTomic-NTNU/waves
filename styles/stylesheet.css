@@ -5,8 +5,9 @@
 }
 
 :root {
-    --fish-color-1: #FA8072;
+    --fish-color-1: #888072;
     --fish-color-2: #FFF5EE;
+    --docs-vis: none;
 }
 
 body {
@@ -114,6 +115,17 @@ svg:hover #Blowfish {
 #Fish1 {
     transform: translateX(-100%);
 }
+
+#doc_section {
+    display: flex;
+    justify-content: center;
+    padding: 10% 0 0 0;
+}
+
+/*
+#docs {
+    visibility: var(--docs-vis);
+}*/
 
 @keyframes wave {
     0% {
