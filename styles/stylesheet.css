@@ -87,9 +87,27 @@ body {
 
 .wave {
     width: 200%;
+}
+
+#Waves {
     animation: wave linear 3s infinite;
 }
 
+#Fish2 {
+    animation: swim linear 6s infinite;
+}
+
+#Blowfish {
+    transition: all 1s ease;
+}
+
+svg:hover #Blowfish {
+    opacity: 0;
+}
+
+#Fish1 {
+    transform: translateX(-100%);
+}
 
 @keyframes wave {
     0% {
@@ -97,5 +115,14 @@ body {
     }
     100% {
         transform: translateX(-16%);
+    }
+}
+
+@keyframes swim {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
