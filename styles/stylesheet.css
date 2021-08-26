@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --fish-color-1: #FA8072;
+    --fish-color-2: #FFF5EE;
+}
+
 body {
     margin: 0;
     line-height: 1.6;
@@ -94,6 +99,7 @@ body {
 }
 
 #Fish2 {
+    fill: var(--fish-color-1);
     animation: swim linear 6s infinite;
 }
 
@@ -121,8 +127,10 @@ svg:hover #Blowfish {
 @keyframes swim {
     0% {
         transform: translateX(0);
+        fill: var(--fish-color-1);
     }
     100% {
         transform: translateX(-100%);
+        fill: var(--fish-color-2);
     }
 }
