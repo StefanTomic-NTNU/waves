@@ -49,13 +49,16 @@ section {
     padding: 0 0 20% 0;
 }
 
-
 .content > p {
     font-size: 1.5rem;
+    margin-bottom: 2%;
 }
 
 .content > h2 {
     font-size: 2rem;
+}
+.content > h3 {
+    font-size: 1.8rem;
 }
 
 .artDescription {
@@ -122,14 +125,14 @@ body {
 
 #Fish {
     fill: var(--fish-color-1);
-    animation: swim linear 6s infinite;
+    animation: swim ease-in 6s infinite;
 }
 
 #Blowfish {
     transition: all 1s ease;
 }
 
-svg:hover #Blowfish {
+#Blowfish:hover {
     opacity: 0;
 }
 
@@ -138,7 +141,15 @@ svg:hover #Blowfish {
 }
 
 .demo {
+    width: min(99%, 28rem);
     padding: 5% 5%;
+    font-size: 1.4rem;
+}
+
+.demoContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 Button { /* https://www.w3schools.com/css/css3_buttons.asp */

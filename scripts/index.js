@@ -1,5 +1,5 @@
 const scale = 5;
-const animationSpeed = 40;
+const animationSpeed = 40; // 40 is good
 let rotationSpeed = 0.3;
 let rotationMaximum = 10;
 let x_offset = 0;
@@ -24,13 +24,6 @@ $(document).ready(function () {
     })
 
     runAnimation(animationSpeed);
-
-    $("#gallery_title").hover(function () {
-            $(this).css("color", "red");
-        },
-        function () {
-            $(this).css("color", "blue");
-        })
 
 
 })

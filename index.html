@@ -51,7 +51,7 @@
     <section class="artDescription">
         <div class="container content artDescription">
             <h2>
-                The Odyssey
+                Odyssey
             </h2>
         </div>
 
@@ -125,7 +125,7 @@
                     List opp de viktigste (mest nyttige) informasjonskildene du har brukt (tutorials, websider, bøker).
                     Husk å oppgi kilder hvis du gjenbruker kodesnutter.
                 </p>
-
+                <h3>CSS-grid og Flexbox</h3>
                 <p>
                     For layoutet har jeg benyttet både grid og flexbox.
                     Flexbox har gjennomgående blitt brukt for å sentrere elementer.
@@ -133,10 +133,81 @@
                     Hensikten her var at de to tekstene skulle stå side ved side uansett skjermstørrelse.
                     Flexbox kunne naturligvis også vært brukt her.
                     Da ville avsnittene heller gå over og under hverandre når skjermstørrelsen blir mindre.
-                    Her er en demo for hvordan det hadde sett ut da:
+                    Her er en demo for hvordan det kunne sett ut da (Prøv å endre bredden på vinduet):
                 </p>
 
+                <div class="demoContainer">
+                    <p class="demo">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Curabitur faucibus eu elit nec vehicula. Etiam mollis rutrum porta.
+                        Donec ac nibh sit amet augue sollicitudin tempor. In non ultricies sapien.
+                        Praesent quis est et est sollicitudin dignissim ac at lorem.
+                        Nulla a dolor pretium, finibus ipsum non, gravida libero.
+                    </p>
+                    <p class="demo">
+                        Sed porta leo et lectus tincidunt vehicula.
+                        Aliquam in sollicitudin magna. Nulla sollicitudin lobortis efficitur.
+                        Nulla pharetra pretium blandit. Cras eu fringilla metus.
+                        Etiam condimentum varius erat, id suscipit arcu. Proin maximus convallis sem sit amet rhoncus.
+                    </p>
+                </div>
 
+                <h3>Canvas</h3>
+                <p>
+                    <i>Odyssey</i> ble tegnet i sin helhet ved bruk av HTML canvas og Javascript.
+                    Ved animering av canvas er prinsippet at canvaset må bli hvisket ut, så tegnet på nytt for hver 'frame.'
+                    Hvordan nøyaktig hver frame skal tegnes opp bør avhenge av noen variabler som ikke resettes for hver nye frame, men heller bare endres litt.
+                    Grunnen til dette er at hvis variablene hadde en konstant verdi så ville man bare ha tegnet opp samme frame om og om igjen.
+                    I praksis så vil det kalles en funksjon, i mitt tilfelle kalt <i>drawCanvas</i> som clearer canvaset, så tegner opp innholdet på nytt.
+                    Utseende til det nye canvaset avhenger av variabler som blir endret på for hvert kall til funksjonen.
+                    Man kan så kalle på <i>drawCanvas</i> et visst antall ganger per tid ved bruk av JS-funksjonen <i>setInterval.</i>
+                </p>
+
+                <p>
+                    Bølgene i <i>Odessey</i> er tegnet ved bruk av <i>CanvasRenderingContext2D.bezierCurveTo()</i>,
+                    som er en innebygd funksjon for å tegne kurver i Canvas. Denne funksjonen blir kalt på gjentatte ganger,
+                    bare at contexten blir 'translated', altså forskyvet, med en distanse tilsvarende bølgelengden i x-retning.
+                    Dette gir inntrykk av en lang og kontinuerlig bølge som danner havet i tegningen.
+                    Bølgens bevegelse kommer av at startpunktet av bølgene forskyves med en x-verdi som inkrementeres for hver frame.
+                    Når denne x-verdien blir større enn bølgelengden blir den satt tilbake til 0. Dette gir inntrykk av kontinuerlig bølgebevegelse.
+                </p>
+
+                <p>
+                    Seilbåten er tegnet ved prøving og feiling ved bruk av 'LineTo' funksjonen.
+                    Gyngingen blir animert ved bruk av samme teknikk som nevnt over, altså ved bruk av 'translate' og endring på variabler.
+                    Om hovedseilet er heist eller ikke blir holdt styr på av en variabel.
+                    Denne variabelen påvirker også bølgehastigheten, båtens gyngehastighet samt maksimale gynging.
+                    Jeg ønsket egentlig at seilet kun skulle heises når man trykket på selve seilbåten,
+                    men siden det er tungvindt å holde styr på hvor båten befinner seg på kanvaset til alle tider
+                    så bestemte jeg meg for at det holder å trykke hvor som helst på kanvaset.
+                </p>
+
+                <h3>SVG</h3>
+                <p>
+                    <i>Deep Blue</i> ble tegnet ved bruk av Figma og eksportert til SVG. Animasjonene ble gjort i CSS-stylesheetet.
+                    De forskjellige elementene i SVGen har forskjellig id, som kan brukes for å referere til dem når man skal lage animasjoner.
+                    Her bruker jeg 'keyframes' for å animere både bølgene og fisken.
+                    Fisken ble animert ved bruk av en enkel keyframe-animasjon der den translates fra sin startposisjon,
+                    som er utenfor skjermen til høyre, bort utenfor skjermen til venstre. Dette gjentas uendelig og er ikke interaktivt.
+                    Kulefisken ble enkelt animert ved bruk av css sin :hover selector, som et satt til å sette opacitien til 0.
+                    Kulefisken har egenskapen at alle 'transistions' finner sted over 1 sekund.
+                    Da får man en fade-effekt både når man først peker over kulefisken og når man fjerner musepekeren.
+                </p>
+
+                <h3>JQuery</h3>
+                <p>
+
+                </p>
+
+                <h3>Cross-browser testing</h3>
+                <p>
+
+                </p>
+
+                <h3>Kilder</h3>
+                <p>
+                    Bølgene i canvas: https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas
+                </p>
             </div>
         </div>
     </section>
