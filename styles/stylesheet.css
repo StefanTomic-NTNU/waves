@@ -18,7 +18,7 @@ body {
 h1,
 h2,
 h3,
-p {
+p, ul {
     margin: 0;
     color: azure;
 }
@@ -45,20 +45,20 @@ section {
 }
 
 .content {
-    width: min(99%, 70.5rem);
+    width: min(97%, 70.5rem);
     padding: 0 0 20% 0;
 }
 
-.content > p {
+.content > p, ul {
     font-size: 1.5rem;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
 }
 
 .content > h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .content > h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .artDescription {
@@ -153,9 +153,10 @@ body {
 }
 
 Button { /* https://www.w3schools.com/css/css3_buttons.asp */
-    background-color: aquamarine; /* Green */
+    background-color: aquamarine;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
     color: #213564;
     padding: 15px 32px;
     text-align: center;
@@ -163,8 +164,17 @@ Button { /* https://www.w3schools.com/css/css3_buttons.asp */
     font-size: 16px;
 }
 
+Button:hover {
+    color: #fff!important;
+    background-color: #117A65!important;
+}
+
 #btn-container {
     padding-bottom: 5%;
+}
+
+.wrap {
+    word-wrap: break-word;
 }
 
 @keyframes wave {

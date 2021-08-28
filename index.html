@@ -125,7 +125,7 @@
                     List opp de viktigste (mest nyttige) informasjonskildene du har brukt (tutorials, websider, bøker).
                     Husk å oppgi kilder hvis du gjenbruker kodesnutter.
                 </p>
-                <h3>CSS-grid og Flexbox</h3>
+                <h3>CSS, Grid og Flexbox</h3>
                 <p>
                     For layoutet har jeg benyttet både grid og flexbox.
                     Flexbox har gjennomgående blitt brukt for å sentrere elementer.
@@ -152,6 +152,13 @@
                     </p>
                 </div>
 
+                <p>
+                    For å bidra til gjøre siden responsiv har jeg lagt til attributtet 'width: min(97%, 70.5rem)' på nærmest all text.
+                    Dette gjør at avsnittene ikke blir så utrolig brede og tunge å lese ved store skjermstørrelser,
+                    men blir heller ikke veldig smale ved mindre skjermstørrelser
+                    (man møter gjerne på minst ett av disse problemene hvis man setter bredden til en fast prosent).
+                </p>
+
                 <h3>Canvas</h3>
                 <p>
                     <i>Odyssey</i> ble tegnet i sin helhet ved bruk av HTML canvas og Javascript.
@@ -164,7 +171,7 @@
                 </p>
 
                 <p>
-                    Bølgene i <i>Odessey</i> er tegnet ved bruk av <i>CanvasRenderingContext2D.bezierCurveTo()</i>,
+                    Bølgene i <i>Odessey</i> er tegnet ved bruk av <i>bezierCurveTo()</i>,
                     som er en innebygd funksjon for å tegne kurver i Canvas. Denne funksjonen blir kalt på gjentatte ganger,
                     bare at contexten blir 'translated', altså forskyvet, med en distanse tilsvarende bølgelengden i x-retning.
                     Dette gir inntrykk av en lang og kontinuerlig bølge som danner havet i tegningen.
@@ -187,27 +194,43 @@
                     <i>Deep Blue</i> ble tegnet ved bruk av Figma og eksportert til SVG. Animasjonene ble gjort i CSS-stylesheetet.
                     De forskjellige elementene i SVGen har forskjellig id, som kan brukes for å referere til dem når man skal lage animasjoner.
                     Her bruker jeg 'keyframes' for å animere både bølgene og fisken.
-                    Fisken ble animert ved bruk av en enkel keyframe-animasjon der den translates fra sin startposisjon,
-                    som er utenfor skjermen til høyre, bort utenfor skjermen til venstre. Dette gjentas uendelig og er ikke interaktivt.
-                    Kulefisken ble enkelt animert ved bruk av css sin :hover selector, som et satt til å sette opacitien til 0.
+                    Både bølgene og fisken som svømmer ble animert ved bruk av en enkel keyframe-animasjon. Fisken translates fra sin startposisjon,
+                    som er utenfor skjermen til høyre, bort utenfor skjermen til venstre. Bølgen blir kun flyttet 16%, som er ca. bølgelengden.
+                    Dette gjentas uendelig og er ikke interaktivt.
+                    For dette var det viktig at parent-elementet til SVG-en er har egenskapen 'overflow: hidden'
+                    for å hindre at skjermens bredde utvides etterhvert som bølgene og fisken beveger seg til venstre.
+                    Kulefisken ble enkelt animert ved bruk av css sin ':hover' selector, som et satt til å sette opacitien til 0.
                     Kulefisken har egenskapen at alle 'transistions' finner sted over 1 sekund.
                     Da får man en fade-effekt både når man først peker over kulefisken og når man fjerner musepekeren.
                 </p>
 
                 <h3>JQuery</h3>
                 <p>
-
+                    JQuery er blitt brukt for å selektere elementer i dokumentet i Javascript.
+                    Behovet for dette har for min del nesten bare kommet av Canvas-elementet.
+                    For å tegne på Canvas-elementet i Javascript må man først finne fram til det (og dets context),
+                    noe som er lettvindt å gjøre ved hjelp av en JQuery selector.
+                    JQuery kan også brukes til å registrere 'event methods'.
+                    For å gjøre kanvaset interaktivt, registrerte jeg JQuery sin 'click()' metode på kanvaset sin context
+                    og la inn en funksjon for å toggle seilet.
                 </p>
 
-                <h3>Cross-browser testing</h3>
+                <h3>Testing</h3>
                 <p>
-
+                    Nettsiden er blitt testet i Google Chrome, Mozilla Firefox og Microsoft Edge, og har fugert som forventet i alle disse.
+                    Her har jeg testet at alle elementene er plassert hvor de skal være, at alle animasjonene spiller som de bør,
+                    samt at interaksjonene fungerer som de skal.
+                    Jeg har også sjekket at siden er responsiv og reagerer fornuftig helt ned til en skjerm-bredde på 320px
+                    (som jeg forstår det er dette en industri-standard).
                 </p>
 
                 <h3>Kilder</h3>
-                <p>
-                    Bølgene i canvas: https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas
-                </p>
+                <ul class="wrap">
+                    <li>Utgangspunkt for bølgene i canvas: https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas</li>
+                    <li>Utgangspunkt for animasjoner i SVG: https://www.youtube.com/watch?v=UTHgr6NLeEw</li>
+                    <li>Toggleknappen er veldig inspirert av: https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp</li>
+                </ul>
+
             </div>
         </div>
     </section>

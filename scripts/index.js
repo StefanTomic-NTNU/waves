@@ -30,8 +30,6 @@ $(document).ready(function () {
 
 
 function drawCanvas() {
-    // https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas
-
     ctx.clearRect(-canvas.width, -canvas.height, 2*canvas.width, 2*canvas.height); // clear the canvas
     ctx.save();
 
