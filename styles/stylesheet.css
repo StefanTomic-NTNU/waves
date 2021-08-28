@@ -5,8 +5,8 @@
 }
 
 :root {
-    --fish-color-1: #888072;
-    --fish-color-2: #FFF5EE;
+    --fish-color-1: silver;
+    --fish-color-2: #2471A3;
 }
 
 body {
@@ -24,7 +24,7 @@ p, ul {
     color: azure;
 }
 
-.art {
+.canvas-section {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -62,7 +62,7 @@ section {
     font-size: 2rem;
 }
 
-.artDescription {
+.art-description {
     padding: 0;
     margin: 0;
     width: 100%;
@@ -77,24 +77,24 @@ body {
     object-fit: contain;
 }
 
-.landing_page {
+.landing-page {
     padding: 22.5% 0;
 
 }
 
-.landing_page > h1 {
+.landing-page > h1 {
     font-size: 9rem;
     line-height: 1.3;
 }
 
-.landing_page > p {
+.landing-page > p {
     font-size: 4rem;
 }
 
 
 
 
-.text_grid {
+.text-grid {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 5%;
@@ -110,30 +110,30 @@ body {
     grid-column-end: 2;
 }
 
-.wave_container {
+.svg-section {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-.wave {
+.deep-blue {
     width: 200%;
 }
 
-#Waves {
+#svg-waves {
     animation: wave linear 3s infinite;
 }
 
-#Fish {
+#swimming-fish {
     fill: var(--fish-color-1);
     animation: swim ease-in 6s infinite;
 }
 
-#Blowfish {
+#blowfish {
     transition: all 1s ease;
 }
 
-#Blowfish:hover {
+#blowfish:hover {
     opacity: 0;
 }
 
