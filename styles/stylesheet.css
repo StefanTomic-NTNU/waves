@@ -13,6 +13,7 @@ body {
     margin: 0;
     line-height: 1.6;
     font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
 }
 
 h1,
@@ -162,10 +163,11 @@ Button { /* https://www.w3schools.com/css/css3_buttons.asp */
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+    font-weight: bold;
 }
 
 Button:hover {
-    color: #fff!important;
+    color: azure !important;
     background-color: #117A65!important;
 }
 
