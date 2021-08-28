@@ -25,7 +25,7 @@
     <section>
         <div class="container">
             <div class="content text-grid">
-                <p class="lefthand-text">
+                <p class="lefthand-text wrap">
                     In this exhibition you will first get to witness the genius of the world renowned French artist
                     Gérôme Robineau (1963 -).
                     Robineau graduated from the École des Beaux-Arts in 1982, and was propelled into world fame when he
@@ -35,7 +35,7 @@
                     photorealistic "Odyssey", to the world.
                 </p>
 
-                <p class="righthand-text">
+                <p class="righthand-text wrap">
                     The second work of art is by the infamous Austrian artist Alfred von Hütte (1989 -).
                     Born in the town of Braunau am Inn, Hütte was at the age of 18 narrowly admitted into the Academy of
                     Fine Arts in Vienna.
@@ -48,8 +48,8 @@
     </section>
 
     <section class="canvas-section">
-        <div class="container">
-            <canvas height="2000" id="canvas1" width="3000"></canvas>
+        <div class="container" id="canvas-container">
+            <canvas height="2000" id="canvas" width="3000"></canvas>
         </div>
     </section>
 
@@ -207,9 +207,8 @@
                     endring på variabler.
                     Om hovedseilet er heist eller ikke blir holdt styr på av en variabel.
                     Denne variabelen påvirker også bølgehastigheten, båtens gyngehastighet samt maksimale gynging.
-                    Jeg ønsket egentlig at seilet kun skulle heises når man trykket på selve seilbåten,
-                    men siden det er tungvindt å holde styr på hvor båten befinner seg på kanvaset til alle tider
-                    så bestemte jeg meg for at det holder å trykke hvor som helst på kanvaset.
+                    Siden det hadde vært ganske tungvindt å finne ut om brukeren har trykket på selve båten eller ikke,
+                    så bestemte jeg mer for at det enkleste hadde vært å heller sjekke om brukeren trykket i et rektangel rundt båten.
                 </p>
 
                 <h3>SVG</h3>
@@ -240,8 +239,7 @@
                     noe som er lettvindt å gjøre ved hjelp av en JQuery selector.
                     JQuery kan også brukes til å registrere 'event methods'.
                     For å gjøre kanvaset interaktivt, registrerte jeg JQuery sin 'click()' metode på kanvaset sin
-                    context
-                    og la inn en funksjon for å toggle seilet.
+                    context og la inn en funksjon for å toggle seilet.
                 </p>
 
                 <h3>Testing</h3>
@@ -263,6 +261,10 @@
                 <ul class="wrap">
                     <li>Utgangspunkt for bølgene i canvas:
                         https://stackoverflow.com/questions/29917446/drawing-sine-wave-in-canvas
+                    </li>
+                    <li>
+                        Tok kodesnutt for å sjekke om brukeren har trykket i et rektangel rundt seilbåten fra denne:
+                        https://stackoverflow.com/questions/33384921/attaching-click-handler-to-canvas-element-with-jquery
                     </li>
                     <li>Jeff Delaney (Fireship), Utgangspunkt for animasjoner i SVG:
                         https://www.youtube.com/watch?v=UTHgr6NLeEw

@@ -11,16 +11,25 @@ let ctx;
 
 $(document).ready(function () {
 
-    let $canvasQuery = $("#canvas1");
+    let $canvasQuery = $("#canvas");
     canvas = $canvasQuery[0];
     ctx = canvas.getContext("2d");
 
-    $canvasQuery.click(function () {
-        if (mainsailUp) {
-            mainsailUp = false;
-        } else if (!mainsailUp) {
-            mainsailUp = true;
+    $canvasQuery.click(function (e) {
+        let mouseX = e.pageX - $canvasQuery.offset().left;
+        let mouseY = e.pageY - $canvasQuery.offset().top;
+        let centerX = $canvasQuery.width() / 2;
+        let centerY = $canvasQuery.height() / 2;
+        console.log(centerY);
+
+        if(((mouseX > (centerX*0.75))) && (mouseX < (centerX*1.25)) && ((mouseY > centerY*0.15) && (mouseY < (centerY*1.25)))) {
+            if (mainsailUp) {
+                mainsailUp = false;
+            } else if (!mainsailUp) {
+                mainsailUp = true;
+            }
         }
+
     })
 
     runAnimation(animationSpeed);
@@ -33,7 +42,7 @@ function drawCanvas() {
     ctx.clearRect(-canvas.width, -canvas.height, 2 * canvas.width, 2 * canvas.height); // clear the canvas
     ctx.save();
 
-    $('#canvas1').css('background-color', 'azure');
+    $('#canvas').css('background-color', 'azure');
     drawBoat();
     drawWaves();
 
