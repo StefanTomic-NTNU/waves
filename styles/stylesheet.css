@@ -5,6 +5,10 @@
 }
 
 :root {
+    --primary-bright-color: azure;
+    --secondary-bright-color: aquamarine;
+    --primary-dark-color: #213564;
+    --secondary-dark-color: #117A65;
     --fish-color-1: silver;
     --fish-color-2: #2471A3;
 }
@@ -21,7 +25,7 @@ h2,
 h3,
 p, ul {
     margin: 0;
-    color: azure;
+    color: var(--primary-bright-color);
 }
 
 .canvas-section {
@@ -37,7 +41,6 @@ p, ul {
 section {
     padding: 22.5% 0 0 0;
 }
-
 
 
 .container {
@@ -58,6 +61,7 @@ section {
 .content > h2 {
     font-size: 2.5rem;
 }
+
 .content > h3 {
     font-size: 2rem;
 }
@@ -69,7 +73,7 @@ section {
 }
 
 body {
-    background-color: #213564; /* stjålet fra https://kystmuseet.no/ */
+    background-color: var(--primary-dark-color);
 }
 
 #canvas1 {
@@ -92,20 +96,18 @@ body {
 }
 
 
-
-
 .text-grid {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 5%;
 }
 
-#lefthand_text {
+#lefthand-text {
     grid-column-start: 1;
     grid-column-end: 1;
 }
 
-#righthand_text {
+#righthand-text {
     grid-column-start: 2;
     grid-column-end: 2;
 }
@@ -154,11 +156,11 @@ body {
 }
 
 Button { /* https://www.w3schools.com/css/css3_buttons.asp */
-    background-color: aquamarine;
+    color: var(--primary-dark-color);
+    background-color: var(--secondary-bright-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: #213564;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -167,8 +169,8 @@ Button { /* https://www.w3schools.com/css/css3_buttons.asp */
 }
 
 Button:hover {
-    color: azure !important;
-    background-color: #117A65!important;
+    color: var(--primary-bright-color) !important;
+    background-color: var(--secondary-dark-color) !important;
 }
 
 #btn-container {
