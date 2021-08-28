@@ -14,6 +14,7 @@
 }
 
 body {
+    background-color: var(--primary-dark-color);
     margin: 0;
     line-height: 1.6;
     font-family: 'Noto Sans JP', sans-serif;
@@ -28,20 +29,10 @@ p, ul {
     color: var(--primary-bright-color);
 }
 
-.canvas-section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
 
 section {
     padding: 22.5% 0 0 0;
 }
-
 
 .container {
     display: flex;
@@ -62,18 +53,9 @@ section {
     font-size: 2.5rem;
 }
 
+
 .content > h3 {
     font-size: 2rem;
-}
-
-.art-description {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-body {
-    background-color: var(--primary-dark-color);
 }
 
 #canvas {
@@ -110,6 +92,25 @@ body {
 #righthand-text {
     grid-column-start: 2;
     grid-column-end: 2;
+}
+
+.wrap {
+    word-wrap: break-word;
+}
+
+.art-description {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.canvas-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .svg-section {
@@ -175,10 +176,6 @@ Button:hover {
 
 #btn-container {
     padding-bottom: 5%;
-}
-
-.wrap {
-    word-wrap: break-word;
 }
 
 @keyframes wave {

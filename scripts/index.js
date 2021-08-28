@@ -20,9 +20,8 @@ $(document).ready(function () {
         let mouseY = e.pageY - $canvasQuery.offset().top;
         let centerX = $canvasQuery.width() / 2;
         let centerY = $canvasQuery.height() / 2;
-        console.log(centerY);
 
-        if(((mouseX > (centerX*0.75))) && (mouseX < (centerX*1.25)) && ((mouseY > centerY*0.15) && (mouseY < (centerY*1.25)))) {
+        if (((mouseX > (centerX * 0.75))) && (mouseX < (centerX * 1.25)) && ((mouseY > centerY * 0.15) && (mouseY < (centerY * 1.25)))) {
             if (mainsailUp) {
                 mainsailUp = false;
             } else if (!mainsailUp) {
